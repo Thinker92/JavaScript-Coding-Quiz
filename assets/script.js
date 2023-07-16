@@ -82,7 +82,7 @@ function displayQuestion() {
     //  Add the answers to the page 
     currentQuestion.choices.forEach(function(choice,i){
         let choiceButton = document.createElement('button');
-        choiceButton.setAttribute('class', 'choice');
+        choiceButton.setAttribute('class', 'choice btn btn-primary d-block mx-auto my-2');
         choiceButton.setAttribute('value', choice);
         choiceButton.innerHTML = i + 1 + ". " + choice;
         choiceButton.onclick = questionClick;
