@@ -64,7 +64,7 @@ function endQuiz() {
     // show end screen 
     endScreen.style.display = 'block';
     // show final score
-    document.getElementById('final-score').textContent = timer;
+    document.getElementById('final-score').textContent = 'Final Score: ' + timer;
     
 }
 
