@@ -6,9 +6,10 @@ const endScreen = document.querySelector(".endScreen");
 const startBtn = document.querySelector("#start")
 const viewHighScore = document.querySelector("#viewScores");
 const clearHighScore = document.querySelector("#clearScores");
-const timer = 75;
+let timer = 75;
 const questionIndex = 0;
 const score = 0;
+
 
 
 
@@ -21,6 +22,19 @@ function startQuiz() {
     event.preventDefault();
     console.log("Start Clicked")
     // Hide .startscreen
+    startScreen.style.display = 'none';
+    // Show questions element
+    questionsEl.style.display = 'block';
+
+    // Start Timer
+    let timerInterval = setInterval(function() {
+        timer --;
+        document.getElementById('time').textContent = timer; 
+        if (timer <= 0) {
+            clearInterval(timerInterval);
+            endQuiz();
+        }
+    },1000)
     // (LOOP) Display first question
     // Display answers
     // Event listener(s) for answers 
@@ -37,4 +51,6 @@ function clearHighScores() {
     console.log("Clear Score Button")
 }
 
-
+function endQuiz() {
+    console.log('endQuiz Reached')
+}
